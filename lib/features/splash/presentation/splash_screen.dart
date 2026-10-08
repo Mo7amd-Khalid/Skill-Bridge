@@ -59,8 +59,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 Image.asset(AppImages.logo, width: 220.w, height: 220.h),
                 Column(
                   children: [
-                    Text(AppKeywords.appName, style: AppTextStyles.headlineLgMobile.copyWith(color: AppColors.white),),
-                    Text(AppKeywords.descriptionForSplash, style: AppTextStyles.bodyLg.copyWith(color: AppColors.darkTextMuted),),
+                    Text(AppKeywords.appName, style: AppTextStyles.text18w600.copyWith(color: AppColors.white),),
+                    Text(AppKeywords.descriptionForSplash, style: AppTextStyles.text14w400.copyWith(color: AppColors.darkTextMuted),),
                   ],
                 ),
               ],
