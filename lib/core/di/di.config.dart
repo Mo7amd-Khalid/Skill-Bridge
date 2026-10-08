@@ -14,6 +14,7 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
+import '../../features/onboarding/presentation/cubit/cubit.dart' as _i1002;
 import 'provide_sharedPreferences.dart' as _i1041;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -27,6 +28,9 @@ extension GetItInjectableX on _i174.GetIt {
     await gh.factoryAsync<_i460.SharedPreferences>(
       () => provideSharedPreferences.provideShared(),
       preResolve: true,
+    );
+    gh.factory<_i1002.OnboardingCubit>(
+      () => _i1002.OnboardingCubit(gh<_i460.SharedPreferences>()),
     );
     return this;
   }

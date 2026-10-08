@@ -7,86 +7,86 @@ import 'package:flutter/material.dart';
 ///
 /// Add both font families to pubspec.yaml if you bundle them locally.
 abstract final class AppTextStyles {
-  // Headlines — Geist
-  static const headlineLg = TextStyle(
+  // Geist — Headlines
+  static const text32w600 = TextStyle(
     fontFamily: 'Geist',
     fontSize: 32,
     fontWeight: FontWeight.w600,
     height: 40 / 32,
-    letterSpacing: -0.64, // -0.02em
+    letterSpacing: -0.64,
   );
 
-  static const headlineLgMobile = TextStyle(
+  static const text26w600 = TextStyle(
     fontFamily: 'Geist',
     fontSize: 26,
     fontWeight: FontWeight.w600,
     height: 34 / 26,
-    letterSpacing: -0.52, // -0.02em
+    letterSpacing: -0.52,
   );
 
-  static const headlineMd = TextStyle(
+  static const text22w600 = TextStyle(
     fontFamily: 'Geist',
     fontSize: 22,
     fontWeight: FontWeight.w600,
     height: 28 / 22,
-    letterSpacing: -0.33, // -0.015em
+    letterSpacing: -0.33,
   );
 
-  static const headlineSm = TextStyle(
+  static const text18w600 = TextStyle(
     fontFamily: 'Geist',
     fontSize: 18,
     fontWeight: FontWeight.w600,
     height: 24 / 18,
-    letterSpacing: -0.18, // -0.01em
+    letterSpacing: -0.18,
   );
 
-  // Body — Inter
-  static const bodyLg = TextStyle(
+  // Inter — Body
+  static const text16w400 = TextStyle(
     fontFamily: 'Inter',
     fontSize: 16,
     fontWeight: FontWeight.w400,
     height: 24 / 16,
-    letterSpacing: -0.08, // -0.005em
+    letterSpacing: -0.08,
   );
 
-  static const bodyMd = TextStyle(
+  static const text14w400 = TextStyle(
     fontFamily: 'Inter',
     fontSize: 14,
     fontWeight: FontWeight.w400,
     height: 20 / 14,
   );
 
-  static const bodySm = TextStyle(
+  static const text12w400 = TextStyle(
     fontFamily: 'Inter',
     fontSize: 12,
     fontWeight: FontWeight.w400,
     height: 16 / 12,
-    letterSpacing: 0.12, // 0.01em
+    letterSpacing: 0.12,
   );
 
-  // Labels — Geist
-  static const labelLg = TextStyle(
+  // Geist — Labels
+  static const text13w500 = TextStyle(
     fontFamily: 'Geist',
     fontSize: 13,
     fontWeight: FontWeight.w500,
     height: 16 / 13,
-    letterSpacing: 0.13, // 0.01em
+    letterSpacing: 0.13,
   );
 
-  static const labelMd = TextStyle(
+  static const text11w600 = TextStyle(
     fontFamily: 'Geist',
     fontSize: 11,
     fontWeight: FontWeight.w600,
     height: 14 / 11,
-    letterSpacing: 0.44, // 0.04em
+    letterSpacing: 0.44,
   );
 
-  static const labelSm = TextStyle(
+  static const text10w600 = TextStyle(
     fontFamily: 'Geist',
     fontSize: 10,
     fontWeight: FontWeight.w600,
     height: 12 / 10,
-    letterSpacing: 0.60, // 0.06em
+    letterSpacing: 0.60,
   );
 
   /// Enables tabular figures for dynamic metrics such as percentages,
@@ -94,6 +94,9 @@ abstract final class AppTextStyles {
   static const tabularFigures = FontFeature.tabularFigures();
 
   static TextStyle metric(TextStyle style) {
-    return style.copyWith(fontFeatures: const [tabularFigures]);
+    return style.copyWith(
+      fontFeatures: const [tabularFigures],
+    );
   }
 }
+
