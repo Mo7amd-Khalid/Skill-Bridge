@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
@@ -41,7 +42,7 @@ class CustomTextFormField extends StatelessWidget {
       spacing: 6,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: AppTextStyles.text13w500),
+        Text(title, style: AppTextStyles.text13w500.copyWith(fontSize: 13.sp)),
         TextFormField(
           onChanged: onChanged,
           obscureText: isObscured ?? false,

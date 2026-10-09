@@ -25,6 +25,6 @@ class GoToHomeScreen extends LoginActions{}
 class GoToForgetPasswordScreen extends LoginActions{}
 
 sealed class LoginNavigations{}
-class NavigateToToHomeScreen extends LoginNavigations{}
-class NavigateToToRegisterScreen extends LoginNavigations{}
-class NavigateToToForgetPasswordScreen extends LoginNavigations{}
+class NavigateToHomeScreen extends LoginNavigations{}
+class NavigateToRegisterScreen extends LoginNavigations{}
+class NavigateToForgetPasswordScreen extends LoginNavigations{}
