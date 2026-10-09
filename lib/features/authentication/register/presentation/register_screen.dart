@@ -158,7 +158,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                           controller: passwordController,
                           title: AppKeywords.password,
-                          isObscured: true,
+                          isObscured: state.isObscured,
                           keyboardType: TextInputType.visiblePassword,
                           prefix: Icon(
                             Icons.lock_outline,
@@ -169,7 +169,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               registerCubit.doAction(ChangeObscured());
                             },
                             icon: Icon(
-                              Icons.visibility_outlined,
+                              state.isObscured? Icons.visibility_off_outlined : Icons.visibility_outlined,
                               color: AppColors.darkTextMuted,
                             ),
                           ),
@@ -230,7 +230,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             return DataValidation.rePasswordValidation(value!, passwordController.text);
                           },
                           title: AppKeywords.confirmationPassword,
-                          isObscured: true,
+                          isObscured: state.isObscured,
                           keyboardType: TextInputType.visiblePassword,
                           prefix: Icon(
                             Icons.lock_outline,
@@ -241,7 +241,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               registerCubit.doAction(ChangeObscured());
                             },
                             icon: Icon(
-                              Icons.visibility_outlined,
+                              state.isObscured? Icons.visibility_off_outlined : Icons.visibility_outlined,
                               color: AppColors.darkTextMuted,
                             ),
                           ),
