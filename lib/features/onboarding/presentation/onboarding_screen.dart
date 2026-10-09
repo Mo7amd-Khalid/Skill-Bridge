@@ -49,11 +49,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   spacing: 8.w,
                   children: [
                     Image.asset(AppImages.logo, width: 32.w, height: 32.h),
-                    Text(AppKeywords.appName,style: AppTextStyles.text18w600,),
+                    Text(AppKeywords.appName,style: AppTextStyles.text18w600.copyWith(
+                      fontSize: 18.sp
+                    ),),
                     Spacer(),
                     TextButton(onPressed: (){
                       cubit.doAction(GoToMainLayout());
-                    }, child: Text(AppKeywords.skip, style: AppTextStyles.text14w400.copyWith(color: AppColors.white),)),
+                    }, child: Text(AppKeywords.skip, style: AppTextStyles.text14w400.copyWith(fontSize: 14.sp,color: AppColors.white),)),
                   ],
                 ),
 
@@ -80,8 +82,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       length: state.onboardingList.length,
                       isSelectedIndex: state.currentIndex,
                     ),
-                    Text(state.onboardingList[state.currentIndex].title, style: AppTextStyles.text26w600,),
-                    Text(state.onboardingList[state.currentIndex].description, style: AppTextStyles.text14w400.copyWith(color: AppColors.darkTextMuted),),
+                    Text(state.onboardingList[state.currentIndex].title, style: AppTextStyles.text26w600.copyWith(fontSize: 26.sp),),
+                    Text(state.onboardingList[state.currentIndex].description, style: AppTextStyles.text14w400.copyWith(fontSize:14.sp,color: AppColors.darkTextMuted),),
                   ],
                 ),
                 FilledButton(
@@ -95,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       }
                     },
                     style: FilledButton.styleFrom(
-                      padding: EdgeInsets.all(18),
+                      padding: EdgeInsets.all(16),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadiusGeometry.circular(12)
                       ) 
@@ -106,7 +108,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   children: [
                     Text(
                       state.currentIndex == state.onboardingList.length - 1 ? AppKeywords.getStarted: AppKeywords.next,
-                      style: AppTextStyles.text14w400,),
+                      style: AppTextStyles.text14w400.copyWith(fontSize: 14.sp),),
                     Icon(Icons.arrow_forward_sharp,),
                   ],
                 )
@@ -115,7 +117,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
         ),
-      ).allPadding(12),
+      ).constPaddingForPage(),
     );
   }
 }

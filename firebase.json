@@ -1,0 +1,22 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "skillbridge-3aab3",
+          "appId": "1:811523670840:android:fb9c0464396d487986b7cd",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "skillbridge-3aab3",
+          "configurations": {
+            "android": "1:811523670840:android:fb9c0464396d487986b7cd",
+            "ios": "1:811523670840:ios:d0ae498f806388a286b7cd"
+          }
+        }
+      }
+    }
+  }
+}
