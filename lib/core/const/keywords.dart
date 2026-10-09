@@ -10,7 +10,18 @@ abstract class AppKeywords{
   static const String onboardingDescription1 = "Turn your ideas into real projects with people who have the skills you need. Match, collaborate, and ship faster.";
   static const String onboardingDescription2 = "Discover people based on their skills, interests, and availability.";
   static const String onboardingDescription3 = "Connect, chat, and work together on projects that matter to you.";
-
+  static const String welcomeMessageForLogin = "Welcome back to SkillBridge 👋";
+  static const String descriptionForLogin = "Log in to check your project requests, messages, and collaborate.";
+  static const String email = "Email";
+  static const String hintForEmail = "name@example.com";
+  static const String password = "Password";
+  static const String hintForPassword = "*************";
+  static const String reminderMe = "Reminder me";
+  static const String forgetPassword = "Forgot password?";
+  static const String login = "Login";
+  static const String dontHaveAccount = "Don't have an account? ";
+  static const String signUp = "Sign up";
+  static const String goAsAGuest = "Go as a guest";
 
 
 

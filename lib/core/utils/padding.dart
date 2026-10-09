@@ -9,6 +9,14 @@ extension PaddingApp on Widget{
 
   }
 
+  Widget constPaddingForPage() {
+    return Padding(
+      padding: EdgeInsets.all(12),
+      child: this,
+    );
+
+  }
+
   Widget horizontalPadding(double num) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: num),
