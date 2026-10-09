@@ -36,11 +36,11 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     loginCubit.navigation.listen((event) {
       switch(event){
-        case NavigateToToHomeScreen():
+        case NavigateToHomeScreen():
           Navigator.pushNamedAndRemoveUntil(context, Routes.mainLayoutScreen, (route) => false);
-        case NavigateToToRegisterScreen():
+        case NavigateToRegisterScreen():
           Navigator.pushNamed(context, Routes.registerScreen);
-        case NavigateToToForgetPasswordScreen():
+        case NavigateToForgetPasswordScreen():
           Navigator.pushNamed(context, Routes.forgetPasswordScreen);
       }
     });
@@ -301,6 +301,13 @@ class _LoginScreenState extends State<LoginScreen> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 }
 

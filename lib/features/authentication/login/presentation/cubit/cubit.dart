@@ -39,15 +39,15 @@ class LoginCubit extends BaseCubit<LoginStates, LoginActions, LoginNavigations>
   }
 
   void _goToForgetPasswordScreen() {
-    emitNavigation(NavigateToToForgetPasswordScreen());
+    emitNavigation(NavigateToForgetPasswordScreen());
   }
 
   void _goToRegisterScreen() {
-    emitNavigation(NavigateToToRegisterScreen());
+    emitNavigation(NavigateToRegisterScreen());
   }
 
   void _goToHomeScreen() {
-    emitNavigation(NavigateToToHomeScreen());
+    emitNavigation(NavigateToHomeScreen());
   }
 
 }

@@ -6,7 +6,6 @@ import '../../core/const/keywords.dart';
 import '../../core/theme/app_text_styles.dart';
 
 Widget logoWidget() => Row(
-  mainAxisAlignment: MainAxisAlignment.center,
   spacing: 8.w,
   children: [
     Image.asset(AppImages.logo, width: 32.w, height: 32.h),
