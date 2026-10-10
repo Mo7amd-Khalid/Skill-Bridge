@@ -14,6 +14,8 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
+import '../../features/authentication/forget_password/presentation/cubit/cubit.dart'
+    as _i649;
 import '../../features/authentication/login/presentation/cubit/cubit.dart'
     as _i844;
 import '../../features/authentication/register/presentation/cubit/cubit.dart'
@@ -33,6 +35,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => provideSharedPreferences.provideShared(),
       preResolve: true,
     );
+    gh.factory<_i649.ForgetPasswordCubit>(() => _i649.ForgetPasswordCubit());
     gh.factory<_i844.LoginCubit>(() => _i844.LoginCubit());
     gh.factory<_i483.RegisterCubit>(() => _i483.RegisterCubit());
     gh.factory<_i1002.OnboardingCubit>(
