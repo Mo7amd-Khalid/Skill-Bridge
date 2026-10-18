@@ -4,9 +4,10 @@ import 'package:skill_bridge/core/routes/routes.dart';
 import 'package:skill_bridge/features/authentication/forget_password/presentation/forget_password_screen.dart';
 import 'package:skill_bridge/features/authentication/login/presentation/login_screen.dart';
 import 'package:skill_bridge/features/authentication/register/presentation/register_screen.dart';
-import 'package:skill_bridge/features/main_layout/presentation/main_layout_screen.dart';
 import 'package:skill_bridge/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:skill_bridge/features/splash/presentation/splash_screen.dart';
+
+import '../../features/poject_management/main_layout/presentation/main_layout_screen.dart';
 
 
 abstract class AppRouter {
@@ -50,7 +51,7 @@ abstract class AppRouter {
       case Routes.mainLayoutScreen:
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => const MainLayoutScreen(),
+          builder: (_) => MainLayoutScreen(),
         );
       default:
         return MaterialPageRoute(
