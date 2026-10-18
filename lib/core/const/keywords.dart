@@ -35,5 +35,28 @@ abstract class AppKeywords{
   static const String goAsAGuest = "Go as a guest";
 
 
+  static const String home = "Home";
+  static const String discover = "Discover";
+  static const String create = "Create";
+  static const String messages = "Messages";
+  static const String profile = "Profile";
+  static const String hintForSearch = "Search projects, skills, or people...";
+  static const String projectsMatchingYourSkills = "Projects matching your skills";
+  static const String viewAll = "View All";
+  static const String peopleYouMayWantToWorkWith = "People you may want to work with";
+  static const String explore = "Explore";
+  static const String avail = "Avail";
+  static const String yourActiveProjects = "Your active projects";
+  static const String active = "Active";
+  static const String owner = "Owner";
+  static const String members = "member/s";
+  static const String nextStandup = "Next standup:";
+  static const String needs = "Needs:";
+  static const String viewProject = "View Project";
+  static const String goodMorning = "Good morning,";
+  static const String handEmotion = "👋";
+
+
+
 
 }

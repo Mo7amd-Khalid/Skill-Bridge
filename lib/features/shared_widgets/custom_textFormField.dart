@@ -8,7 +8,7 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     required this.controller,
-    required this.title,
+    this.title,
     this.keyboardType,
     this.isObscured,
     this.prefix,
@@ -23,7 +23,7 @@ class CustomTextFormField extends StatelessWidget {
   });
 
   final TextEditingController controller;
-  final String title;
+  final String? title;
   final Widget? hint;
   final TextInputType? keyboardType;
   final Widget? prefix;
@@ -42,7 +42,8 @@ class CustomTextFormField extends StatelessWidget {
       spacing: 6,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: AppTextStyles.text13w500.copyWith(fontSize: 13.sp)),
+        if(title != null)
+          Text(title!, style: AppTextStyles.text13w500.copyWith(fontSize: 13.sp)),
         TextFormField(
           onChanged: onChanged,
           obscureText: isObscured ?? false,
