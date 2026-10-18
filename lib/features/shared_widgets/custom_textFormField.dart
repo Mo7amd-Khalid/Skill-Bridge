@@ -19,7 +19,8 @@ class CustomTextFormField extends StatelessWidget {
     this.errorBorder,
     this.hint,
     this.validator,
-    this.onChanged
+    this.onChanged,
+    this.numOFLines,
   });
 
   final TextEditingController controller;
@@ -35,6 +36,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool? isObscured;
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
+  final int? numOFLines;
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +51,7 @@ class CustomTextFormField extends StatelessWidget {
           obscureText: isObscured ?? false,
           controller: controller,
           validator: validator,
+          maxLines: numOFLines ?? 1,
           cursorColor: AppColors.darkTextMuted,
           decoration: InputDecoration(
             prefixIcon: prefix,

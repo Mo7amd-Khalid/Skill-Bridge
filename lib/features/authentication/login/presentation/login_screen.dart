@@ -9,7 +9,7 @@ import 'package:skill_bridge/core/theme/app_colors.dart';
 import 'package:skill_bridge/core/theme/app_text_styles.dart';
 import 'package:skill_bridge/features/authentication/login/presentation/cubit/contract.dart';
 import 'package:skill_bridge/features/authentication/login/presentation/cubit/cubit.dart';
-import 'package:skill_bridge/features/shared_widgets/get_strenght_of-password.dart';
+import 'package:skill_bridge/features/shared_widgets/get_strength_of_password.dart';
 import 'package:skill_bridge/features/shared_widgets/password_requirements.dart';
 import 'package:skill_bridge/features/validation/data_validation.dart';
 import '../../../shared_widgets/custom_textFormField.dart';

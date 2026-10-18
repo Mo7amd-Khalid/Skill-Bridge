@@ -13,7 +13,7 @@ class DataValidation{
   static String? emailValidation(String value){
     if (value.isEmpty) {
       return "Email is required";
-    } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+    } else if (!RegExp(r'^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$')
         .hasMatch(value)) {
       return "Please, enter valid email";
     }
@@ -28,4 +28,21 @@ class DataValidation{
     }
     return null;
   }
+
+  static String? linkValidation(String value){
+    if(value.isEmpty)
+      {
+        return "Link is required";
+      }
+    return null;
+  }
+
+  static String? linkNameValidation(String value){
+    if(value.isEmpty)
+    {
+      return "Link name is required";
+    }
+    return null;
+  }
+
 }
