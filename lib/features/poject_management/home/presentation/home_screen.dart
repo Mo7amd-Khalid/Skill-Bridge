@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
       padding: EdgeInsets.all(12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         spacing: 10.h,
         children: [
           Text("${AppKeywords.goodMorning} Mohamed ${AppKeywords.handEmotion}", style: AppTextStyles.text22w600,),
@@ -45,10 +46,12 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 400.h,
+            height: 430.h,
             child: ListView.separated(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) => ProjectCard(),
-                separatorBuilder: (_, _) => 14.verticalSpace,
+                separatorBuilder: (_, _) => 14.horizontalSpace,
                 itemCount: 10),
           ),
           Row(
@@ -62,14 +65,11 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 170.h,
+            height: 240.h,
             child: ListView.separated(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemBuilder: (_, index) => SizedBox(
-                width: 300.w,
-                child: ContributorWidget(),
-              ),
+              itemBuilder: (_, index) => ContributorWidget(),
               separatorBuilder: (_, _) => 14.horizontalSpace,
               itemCount: 10,
             ),
