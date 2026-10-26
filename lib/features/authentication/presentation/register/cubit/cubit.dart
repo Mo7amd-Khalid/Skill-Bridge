@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:skill_bridge/core/const/keywords.dart';
 import 'package:skill_bridge/core/theme/app_colors.dart';
 import '../../../../../core/base/base_cubit.dart';
+import '../../../../collaborators_management/data/models/collaborator_model.dart';
 import 'contract.dart';
 
 @injectable

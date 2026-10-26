@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skill_bridge/core/const/keywords.dart';
+import 'package:skill_bridge/core/routes/routes.dart';
+import 'package:skill_bridge/core/utils/time_and_date.dart';
+import 'package:skill_bridge/features/project_management/data/models/project_model.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/utils/padding.dart';
 
 class ProjectCard extends StatelessWidget {
-  const ProjectCard({super.key});
+  const ProjectCard({super.key, required this.project});
+
+  final ProjectModel project;
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +30,11 @@ class ProjectCard extends StatelessWidget {
                 Row(
                   spacing: 5.w,
                   children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: AppColors.darkBorderStrong,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text("Health & Wellness", style: AppTextStyles.text11w600,),
-                    ),
-                    Text("5h ago", style: AppTextStyles.text12w400),
+                    Text(project.createdAt.timeAgo, style: AppTextStyles.text12w400),
                   ],
                 ),
                 Spacer(),
+                // calculate the percentage of my skills and project skills and show it
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                   decoration: BoxDecoration(
@@ -50,6 +48,7 @@ class ProjectCard extends StatelessWidget {
                 )
               ],
             ),
+            // project manager Info
             Row(
               spacing: 10.w,
               children: [
@@ -66,19 +65,24 @@ class ProjectCard extends StatelessWidget {
                 ))
               ],
             ),
+
+            // title
             Text(
-              "AI Expense Tracker",
+              project.title,
               style: AppTextStyles.text18w600,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
+
+            // description
             Text(
-              "Automated receipt parsing and budgeting for college students with zero manual entry.",
+              project.description,
               style: AppTextStyles.text12w400,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
             ),
             Text(AppKeywords.needs, style: AppTextStyles.text11w600,),
+            // required skills
             GridView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -94,9 +98,9 @@ class ProjectCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(9999),
                   color: AppColors.darkBorderStrong,
                 ),
-                child: Text("92% Match", style: AppTextStyles.text11w600,),
+                child: Text(project.requiredSkills[index].skillName, style: AppTextStyles.text11w600,),
               ),
-              itemCount: 7,
+              itemCount: project.requiredSkills.length,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,12 +109,14 @@ class ProjectCard extends StatelessWidget {
                 Row(
                   children: [
                     Icon(Icons.people_alt_outlined, color: AppColors.darkTextMuted,),
-                    Text("3 ${AppKeywords.members}", style: AppTextStyles.text11w600.copyWith(color: AppColors.darkTextMuted)),
+                    Text("${project.memberIds.length} ${AppKeywords.members}", style: AppTextStyles.text11w600.copyWith(color: AppColors.darkTextMuted)),
                   ],
                 ),
 
                 FilledButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.pushNamed(context, Routes.projectDetailsScreen, arguments: project);
+                    },
                     style: FilledButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadiusGeometry.circular(8)

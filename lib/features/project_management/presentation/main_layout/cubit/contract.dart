@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skill_bridge/features/poject_management/home/presentation/home_screen.dart';
+import 'package:skill_bridge/features/project_management/presentation/home/home_screen.dart';
 
 class MainLayoutStates{
   int currentIndex;
