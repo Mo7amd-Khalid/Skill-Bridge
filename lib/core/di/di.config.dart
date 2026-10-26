@@ -14,14 +14,14 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
-import '../../features/authentication/forget_password/presentation/cubit/cubit.dart'
+import '../../features/authentication/presentation/forget_password/cubit/cubit.dart'
     as _i649;
-import '../../features/authentication/login/presentation/cubit/cubit.dart'
+import '../../features/authentication/presentation/login/cubit/cubit.dart'
     as _i844;
-import '../../features/authentication/register/presentation/cubit/cubit.dart'
+import '../../features/authentication/presentation/register/cubit/cubit.dart'
     as _i483;
 import '../../features/onboarding/presentation/cubit/cubit.dart' as _i1002;
-import '../../features/poject_management/main_layout/presentation/cubit/cubit.dart'
+import '../../features/project_management/presentation/main_layout/cubit/cubit.dart'
     as _i600;
 import 'provide_sharedPreferences.dart' as _i1041;
 

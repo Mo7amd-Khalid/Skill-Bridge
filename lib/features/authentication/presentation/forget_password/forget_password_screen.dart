@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skill_bridge/core/di/di.dart';
-import 'package:skill_bridge/features/authentication/forget_password/presentation/cubit/cubit.dart';
+import 'package:skill_bridge/features/authentication/presentation/forget_password/cubit/cubit.dart';
 import '../../../../core/const/keywords.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';

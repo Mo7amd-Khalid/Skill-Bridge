@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:skill_bridge/core/base/base_cubit.dart';
-import 'package:skill_bridge/features/authentication/login/presentation/cubit/contract.dart';
+import 'package:skill_bridge/features/authentication/presentation/login/cubit/contract.dart';
 
 
 @injectable

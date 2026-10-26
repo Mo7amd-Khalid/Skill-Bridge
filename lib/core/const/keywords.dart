@@ -72,6 +72,14 @@ abstract class AppKeywords{
   static const String viewProject = "View Project";
   static const String goodMorning = "Good morning,";
   static const String handEmotion = "👋";
+  static const String posted = "Posted";
+  static const String creator = "Creator";
+  static const String aboutTheProject = "About the project";
+  static const String whatWeAlreadyHave = "What we already have";
+  static const String skillsWeNeed = "Skills we need";
+  static const String collaboratorsNeeded = "Collaborators Needed";
+  static const String currentMembers = "Current Members";
+  static const String requestToCollaborate = "Request to Collaborate";
 
 
 

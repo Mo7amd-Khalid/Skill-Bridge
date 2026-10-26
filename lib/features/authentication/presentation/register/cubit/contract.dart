@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-enum ExperienceLevel { junior, midLevel, senior }
+import '../../../../collaborators_management/data/models/collaborator_model.dart';
+
 
 class RegisterStates {
   final bool isObscured;

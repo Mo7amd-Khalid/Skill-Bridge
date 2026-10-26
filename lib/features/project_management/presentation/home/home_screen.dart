@@ -7,6 +7,7 @@ import 'package:skill_bridge/features/shared_widgets/custom_textFormField.dart';
 import '../../../shared_widgets/active_project_widget.dart';
 import '../../../shared_widgets/contributor_widget.dart';
 import '../../../shared_widgets/project_card.dart';
+import '../../data/models/project_model.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -50,9 +51,9 @@ class HomeScreen extends StatelessWidget {
             child: ListView.separated(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) => ProjectCard(),
+                itemBuilder: (_, index) => ProjectCard(project: dummyProjects[index],),
                 separatorBuilder: (_, _) => 14.horizontalSpace,
-                itemCount: 10),
+                itemCount: dummyProjects.length),
           ),
           Row(
             children: [
