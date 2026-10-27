@@ -114,7 +114,7 @@ final List<ProjectModel> dummyProjects = [
     description:
     'Create a productivity app that allows users to manage tasks, '
         'set reminders, track progress, and collaborate with teams.',
-    projectManagerId: 'user_003',
+    projectManagerId: 'user_002',
     memberIds: ['user_003', 'user_004', 'user_005'],
     requiredSkills: const [
       RequiredSkillModel(skillName: 'Flutter', requiredMembersCount: 2),
@@ -131,7 +131,7 @@ final List<ProjectModel> dummyProjects = [
     description:
     'Develop an educational platform where instructors can publish '
         'courses and students can watch lessons and track their learning.',
-    projectManagerId: 'user_006',
+    projectManagerId: 'user_003',
     memberIds: ['user_006', 'user_007'],
     requiredSkills: const [
       RequiredSkillModel(skillName: 'Flutter', requiredMembersCount: 2),
@@ -151,7 +151,7 @@ final List<ProjectModel> dummyProjects = [
     description:
     'Build a fitness application to track workouts, daily activity, '
         'calories, and personal fitness goals.',
-    projectManagerId: 'user_008',
+    projectManagerId: 'user_004',
     memberIds: ['user_008', 'user_009', 'user_010'],
     requiredSkills: const [
       RequiredSkillModel(skillName: 'Flutter', requiredMembersCount: 2),
@@ -168,7 +168,7 @@ final List<ProjectModel> dummyProjects = [
     description:
     'Create an application for discovering events, booking tickets, '
         'and managing event registrations.',
-    projectManagerId: 'user_011',
+    projectManagerId: 'user_05',
     memberIds: ['user_011', 'user_012'],
     requiredSkills: const [
       RequiredSkillModel(skillName: 'Flutter', requiredMembersCount: 2),
@@ -191,7 +191,7 @@ final List<ProjectModel> dummyProjects = [
     description:
     'Develop a messaging app with private chats, group conversations, '
         'push notifications, and online presence.',
-    projectManagerId: 'user_013',
+    projectManagerId: 'user_006',
     memberIds: ['user_013', 'user_014', 'user_015'],
     requiredSkills: const [
       RequiredSkillModel(skillName: 'Flutter', requiredMembersCount: 2),
@@ -211,7 +211,7 @@ final List<ProjectModel> dummyProjects = [
     description:
     'Build a travel companion that helps users discover destinations, '
         'plan itineraries, and save their favorite places on a map.',
-    projectManagerId: 'user_016',
+    projectManagerId: 'user_007',
     memberIds: ['user_016', 'user_017'],
     requiredSkills: const [
       RequiredSkillModel(skillName: 'Flutter', requiredMembersCount: 2),
@@ -228,7 +228,7 @@ final List<ProjectModel> dummyProjects = [
     description:
     'Create a finance app for recording income and expenses, setting '
         'budgets, and viewing monthly spending reports.',
-    projectManagerId: 'user_018',
+    projectManagerId: 'user_008',
     memberIds: ['user_018', 'user_019', 'user_020'],
     requiredSkills: const [
       RequiredSkillModel(skillName: 'Flutter', requiredMembersCount: 2),
@@ -251,7 +251,7 @@ final List<ProjectModel> dummyProjects = [
     description:
     'Develop a food ordering platform with restaurant listings, '
         'live order tracking, and delivery management.',
-    projectManagerId: 'user_021',
+    projectManagerId: 'user_009',
     memberIds: ['user_021', 'user_022'],
     requiredSkills: const [
       RequiredSkillModel(skillName: 'Flutter', requiredMembersCount: 2),
@@ -271,7 +271,7 @@ final List<ProjectModel> dummyProjects = [
     description:
     'Build a platform where developers can create projects, find '
         'collaborators based on skills, and work together on shared goals.',
-    projectManagerId: 'user_023',
+    projectManagerId: 'user_010',
     memberIds: ['user_023', 'user_024', 'user_025'],
     requiredSkills: const [
       RequiredSkillModel(skillName: 'Flutter', requiredMembersCount: 2),

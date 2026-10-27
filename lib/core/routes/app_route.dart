@@ -8,6 +8,8 @@ import 'package:skill_bridge/features/onboarding/presentation/onboarding_screen.
 import 'package:skill_bridge/features/project_management/presentation/project_details/project_details_screen.dart';
 import 'package:skill_bridge/features/splash/presentation/splash_screen.dart';
 
+import '../../features/contributor_management/data/models/collaborator_model.dart';
+import '../../features/contributor_management/presentation/contributor_details/contributor_details_screen.dart';
 import '../../features/project_management/data/models/project_model.dart';
 import '../../features/project_management/presentation/main_layout/main_layout_screen.dart';
 
@@ -59,6 +61,11 @@ abstract class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => ProjectDetailsScreen(project: settings.arguments as ProjectModel,),
+        );
+      case Routes.contributorDetailsScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => ContributorDetailsScreen(contributor: settings.arguments as ContributorModel,),
         );
       default:
         return MaterialPageRoute(
