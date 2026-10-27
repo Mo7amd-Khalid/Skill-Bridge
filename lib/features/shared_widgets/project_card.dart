@@ -48,24 +48,6 @@ class ProjectCard extends StatelessWidget {
                 )
               ],
             ),
-            // project manager Info
-            Row(
-              spacing: 10.w,
-              children: [
-                CircleAvatar(
-                  backgroundColor: AppColors.primary,
-                  radius: 15.r,
-                  child: Text("MK", style: AppTextStyles.text11w600,),
-                ),
-                Expanded(child: Text(
-                  "Mohamed Khaled",
-                  style: AppTextStyles.text11w600,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ))
-              ],
-            ),
-
             // title
             Text(
               project.title,
@@ -83,25 +65,37 @@ class ProjectCard extends StatelessWidget {
             ),
             Text(AppKeywords.needs, style: AppTextStyles.text11w600,),
             // required skills
-            GridView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 10.w,
-                  mainAxisSpacing: 10.h,
-                  childAspectRatio: 4.5
-              ),
-              itemBuilder: (_, index) => Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(9999),
-                  color: AppColors.darkBorderStrong,
-                ),
-                child: Text(project.requiredSkills[index].skillName, style: AppTextStyles.text11w600,),
-              ),
-              itemCount: project.requiredSkills.length,
+            Wrap(
+              spacing: 10.w,
+              runSpacing: 10.h,
+              children: [
+                ...project.requiredSkills.take(3).map((skill) {
+                  return Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(9999),
+                      color: AppColors.darkBorderStrong,
+                    ),
+                    child: Text(skill.skillName, style: AppTextStyles.text11w600,),
+                  );
+                }),
+                if(project.requiredSkills.length > 3)
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(9999),
+                      border: Border.all(
+                        color: AppColors.darkBorderStrong,
+                      ),
+                    ),
+                    child: Text(
+                      '...',
+                      style: AppTextStyles.text11w600,
+                    ),
+                  ),
+              ],
             ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               spacing: 2,

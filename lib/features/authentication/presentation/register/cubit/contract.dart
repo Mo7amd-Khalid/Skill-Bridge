@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../collaborators_management/data/models/collaborator_model.dart';
+import '../../../../contributor_management/data/models/collaborator_model.dart';
 
 
 class RegisterStates {

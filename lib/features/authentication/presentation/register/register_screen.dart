@@ -9,7 +9,7 @@ import '../../../../core/const/keywords.dart';
 import '../../../../core/const/skills_list.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
-import '../../../collaborators_management/data/models/collaborator_model.dart';
+import '../../../contributor_management/data/models/collaborator_model.dart';
 import '../../../shared_widgets/custom_textFormField.dart';
 import '../../../shared_widgets/get_strength_of_password.dart';
 import '../../../shared_widgets/logo_widget.dart';

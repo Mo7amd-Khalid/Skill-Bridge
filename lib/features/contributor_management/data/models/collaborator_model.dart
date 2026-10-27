@@ -1,5 +1,5 @@
 
-class CollaboratorModel {
+class ContributorModel {
   final String id;
   final String name;
   final String title;
@@ -8,9 +8,11 @@ class CollaboratorModel {
   final List<String> skills;
   final ExperienceLevel experienceLevel;
   final List<String> portfolioLinks;
+  final List<String> contributedProjectsIDs;
+  final List<String> managedProjectsIDs;
   final int availableHours;
 
-  const CollaboratorModel({
+  const ContributorModel({
     required this.id,
     required this.name,
     required this.title,
@@ -19,11 +21,13 @@ class CollaboratorModel {
     required this.skills,
     required this.experienceLevel,
     this.portfolioLinks = const [],
+    this.contributedProjectsIDs = const [],
+    this.managedProjectsIDs = const [],
     required this.availableHours,
   });
 
-  factory CollaboratorModel.fromJson(Map<String, dynamic> json) {
-    return CollaboratorModel(
+  factory ContributorModel.fromJson(Map<String, dynamic> json) {
+    return ContributorModel(
       id: json['id'] as String,
       name: json['name'] as String,
       title: json['title'] as String,
@@ -34,6 +38,8 @@ class CollaboratorModel {
         json['experienceLevel'] as String,
       ),
       portfolioLinks: List<String>.from(json['portfolioLinks'] ?? []),
+      contributedProjectsIDs: List<String>.from(json['contributedProjectsIDs'] ?? []),
+      managedProjectsIDs: List<String>.from(json['managedProjectsIDs'] ?? []),
       availableHours: json['availableHours'] as int,
     );
   }
@@ -48,6 +54,8 @@ class CollaboratorModel {
       'skills': skills,
       'experienceLevel': experienceLevel.name,
       'portfolioLinks': portfolioLinks,
+      'contributedProjectsIDs': contributedProjectsIDs,
+      'managedProjectsIDs': managedProjectsIDs,
       'availableHours': availableHours,
     };
   }
@@ -60,19 +68,21 @@ enum ExperienceLevel {
 }
 
 
-final List<CollaboratorModel> dummyUsers = [
-  CollaboratorModel(
+final List<ContributorModel> dummyUsers = [
+  ContributorModel(
     id: 'user_001',
     name: 'Ahmed Hassan',
     title: 'Flutter Developer',
     email: 'ahmed@example.com',
     bio: 'Flutter developer interested in building scalable mobile apps.',
-    skills: ['Flutter', 'Dart', 'Firebase'],
+    skills: ['Flutter', 'Dart', 'Firebase','Flutter','Flutter','Flutter','Flutter','Flutter','Flutter','Flutter','Flutter',],
     experienceLevel: ExperienceLevel.midLevel,
     portfolioLinks: ['https://github.com/ahmed-hassan'],
     availableHours: 4,
+    contributedProjectsIDs: ['project_001', 'project_005', 'project_010'],
+    managedProjectsIDs: ['project_001']
   ),
-  CollaboratorModel(
+  ContributorModel(
     id: 'user_002',
     name: 'Sara Mohamed',
     title: 'UI/UX Designer',
@@ -82,8 +92,10 @@ final List<CollaboratorModel> dummyUsers = [
     experienceLevel: ExperienceLevel.senior,
     portfolioLinks: ['https://behance.net/sara-mohamed'],
     availableHours: 3,
+    contributedProjectsIDs: ['project_002', 'project_004', 'project_010'],
+    managedProjectsIDs: ['project_002']
   ),
-  CollaboratorModel(
+  ContributorModel(
     id: 'user_003',
     name: 'Omar Ali',
     title: 'Backend Developer',
@@ -93,8 +105,10 @@ final List<CollaboratorModel> dummyUsers = [
     experienceLevel: ExperienceLevel.senior,
     portfolioLinks: ['https://github.com/omar-ali'],
     availableHours: 5,
+    contributedProjectsIDs: ['project_003', 'project_006', 'project_008'],
+    managedProjectsIDs: ['project_003']
   ),
-  CollaboratorModel(
+  ContributorModel(
     id: 'user_004',
     name: 'Mariam Ibrahim',
     title: 'Junior Flutter Developer',
@@ -104,8 +118,10 @@ final List<CollaboratorModel> dummyUsers = [
     experienceLevel: ExperienceLevel.junior,
     portfolioLinks: ['https://github.com/mariam-ibrahim'],
     availableHours: 6,
+    contributedProjectsIDs: ['project_004', 'project_003', 'project_007'],
+    managedProjectsIDs: ['project_004']
   ),
-  CollaboratorModel(
+  ContributorModel(
     id: 'user_005',
     name: 'Youssef Khaled',
     title: 'Full-Stack Mobile Developer',
@@ -115,8 +131,10 @@ final List<CollaboratorModel> dummyUsers = [
     experienceLevel: ExperienceLevel.midLevel,
     portfolioLinks: ['https://github.com/youssef-khaled'],
     availableHours: 4,
+    contributedProjectsIDs: ['project_005', 'project_006', 'project_009'],
+    managedProjectsIDs: ['project_005']
   ),
-  CollaboratorModel(
+  ContributorModel(
     id: 'user_006',
     name: 'Nour Adel',
     title: 'Mobile Application Developer',
@@ -126,8 +144,10 @@ final List<CollaboratorModel> dummyUsers = [
     experienceLevel: ExperienceLevel.midLevel,
     portfolioLinks: ['https://github.com/nour-adel'],
     availableHours: 3,
+    contributedProjectsIDs: ['project_006', 'project_005', 'project_007'],
+    managedProjectsIDs: ['project_006']
   ),
-  CollaboratorModel(
+  ContributorModel(
     id: 'user_007',
     name: 'Mostafa Samir',
     title: 'Flutter & Maps Developer',
@@ -137,8 +157,10 @@ final List<CollaboratorModel> dummyUsers = [
     experienceLevel: ExperienceLevel.senior,
     portfolioLinks: ['https://github.com/mostafa-samir'],
     availableHours: 5,
+    contributedProjectsIDs: ['project_007', 'project_007', 'project_009'],
+    managedProjectsIDs: ['project_007']
   ),
-  CollaboratorModel(
+  ContributorModel(
     id: 'user_008',
     name: 'Farah Ahmed',
     title: 'Product Designer',
@@ -148,8 +170,10 @@ final List<CollaboratorModel> dummyUsers = [
     experienceLevel: ExperienceLevel.midLevel,
     portfolioLinks: ['https://behance.net/farah-ahmed'],
     availableHours: 4,
+    contributedProjectsIDs: ['project_008', 'project_001', 'project_010'],
+    managedProjectsIDs: ['project_008']
   ),
-  CollaboratorModel(
+  ContributorModel(
     id: 'user_009',
     name: 'Karim Mahmoud',
     title: 'Junior Software Developer',
@@ -159,8 +183,10 @@ final List<CollaboratorModel> dummyUsers = [
     experienceLevel: ExperienceLevel.junior,
     portfolioLinks: [],
     availableHours: 2,
+    contributedProjectsIDs: ['project_009', 'project_008', 'project_010'],
+    managedProjectsIDs: ['project_009']
   ),
-  CollaboratorModel(
+  ContributorModel(
     id: 'user_010',
     name: 'Hana Mostafa',
     title: 'DevOps Engineer',
@@ -170,5 +196,20 @@ final List<CollaboratorModel> dummyUsers = [
     experienceLevel: ExperienceLevel.midLevel,
     portfolioLinks: ['https://github.com/hana-mostafa'],
     availableHours: 3,
+    contributedProjectsIDs: ['project_010', 'project_006', 'project_010'],
+    managedProjectsIDs: ['project_010']
   ),
+  ContributorModel(
+      id: 'user_011',
+      name: 'Hanan Mohamed',
+      title: 'DevOps Engineer',
+      email: 'hanan@example.com',
+      bio: 'DevOps enthusiast interested in deployment and automation.',
+      skills: ['DevOps', 'Flutter', 'CI/CD'],
+      experienceLevel: ExperienceLevel.junior,
+      portfolioLinks: ['https://github.com/hanan-mohamed'],
+      availableHours: 3,
+      contributedProjectsIDs: ['project_010', 'project_006', 'project_010'],
+      managedProjectsIDs: []
+  )
 ];

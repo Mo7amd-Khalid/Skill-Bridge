@@ -80,6 +80,14 @@ abstract class AppKeywords{
   static const String collaboratorsNeeded = "Collaborators Needed";
   static const String currentMembers = "Current Members";
   static const String requestToCollaborate = "Request to Collaborate";
+  static const String projects = "Projects";
+  static const String skillsAndCompetencies = "SKILLS & COMPETENCIES";
+  static const String availabilityAndWorkingStyle = "AVAILABILITY & WORKING STYLE";
+  static const String hrsPerDay = "hrs/day";
+  static const String contributor = "Contributor";
+  static const String details = "Details";
+  static const String inviteToProject = "Invite to project";
+  static const String activeAndCompletedProjects = "ACTIVE & COMPLETED PROJECTS";
 
 
 
