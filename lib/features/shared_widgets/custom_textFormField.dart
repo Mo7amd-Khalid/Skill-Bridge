@@ -21,6 +21,10 @@ class CustomTextFormField extends StatelessWidget {
     this.validator,
     this.onChanged,
     this.numOFLines,
+    this.onTab,
+    this.autoFocus,
+    this.enabled,
+    this.readOnly,
   });
 
   final TextEditingController controller;
@@ -34,8 +38,12 @@ class CustomTextFormField extends StatelessWidget {
   final InputBorder? focusedBorder;
   final InputBorder? errorBorder;
   final bool? isObscured;
+  final bool? autoFocus;
+  final bool? enabled;
+  final bool? readOnly;
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
+  final void Function()? onTab;
   final int? numOFLines;
 
   @override
@@ -47,11 +55,15 @@ class CustomTextFormField extends StatelessWidget {
         if(title != null)
           Text(title!, style: AppTextStyles.text13w500.copyWith(fontSize: 13.sp)),
         TextFormField(
+          enabled: enabled ?? true,
           onChanged: onChanged,
+          autofocus: autoFocus ?? false,
+          onTap: onTab,
           obscureText: isObscured ?? false,
           controller: controller,
           validator: validator,
           maxLines: numOFLines ?? 1,
+          readOnly: readOnly ?? false,
           cursorColor: AppColors.darkTextMuted,
           decoration: InputDecoration(
             prefixIcon: prefix,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skill_bridge/core/di/di.dart';
+import 'package:skill_bridge/core/routes/routes.dart';
 import 'package:skill_bridge/core/theme/app_colors.dart';
 import 'package:skill_bridge/features/project_management/presentation/main_layout/cubit/contract.dart';
 import '../../../shared_widgets/logo_widget.dart';
@@ -37,6 +38,10 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
               if(index == 2)
                 {
                   // navigate to create project screen
+                }
+              else if(index == 1)
+                {
+                  Navigator.pushNamed(context, Routes.discoverScreen);
                 }
               else
                 {

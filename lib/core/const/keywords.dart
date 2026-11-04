@@ -57,7 +57,9 @@ abstract class AppKeywords{
   static const String create = "Create";
   static const String messages = "Messages";
   static const String profile = "Profile";
-  static const String hintForSearch = "Search projects, skills, or people...";
+  static const String hintForSearch = "Search projects, skills, or contributors...";
+  static const String hintForProjectSearch = "Search projects";
+  static const String hintForContributorsSearch = "Search contributors";
   static const String projectsMatchingYourSkills = "Projects matching your skills";
   static const String viewAll = "View All";
   static const String peopleYouMayWantToWorkWith = "People you may want to work with";
@@ -85,7 +87,12 @@ abstract class AppKeywords{
   static const String availabilityAndWorkingStyle = "AVAILABILITY & WORKING STYLE";
   static const String hrsPerDay = "hrs/day";
   static const String contributor = "Contributor";
+  static const String contributors = "Contributors";
   static const String details = "Details";
+  static const String filters = "Filters";
+  static const String resetAll = "Reset all";
+  static const String somethingWentWrong = "Something went wrong";
+  static const String noResultFount = "No Result Fount";
   static const String inviteToProject = "Invite to project";
   static const String activeAndCompletedProjects = "ACTIVE & COMPLETED PROJECTS";
 
