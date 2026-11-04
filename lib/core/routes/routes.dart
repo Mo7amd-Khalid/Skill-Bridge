@@ -7,5 +7,6 @@ abstract class Routes {
   static const String mainLayoutScreen = "mainLayoutScreen";
   static const String projectDetailsScreen = "projectDetailsScreen";
   static const String contributorDetailsScreen = "contributorDetailsScreen";
+  static const String discoverScreen = "discoverScreen";
 
 }

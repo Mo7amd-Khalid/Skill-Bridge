@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skill_bridge/core/const/keywords.dart';
+import 'package:skill_bridge/core/routes/routes.dart';
 import 'package:skill_bridge/core/theme/app_colors.dart';
 import 'package:skill_bridge/core/theme/app_text_styles.dart';
 import 'package:skill_bridge/features/contributor_management/data/models/collaborator_model.dart';
@@ -11,8 +12,14 @@ import '../../../shared_widgets/project_card.dart';
 import '../../data/models/project_model.dart';
 
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController searchController = TextEditingController();
 
   @override
@@ -27,14 +34,15 @@ class HomeScreen extends StatelessWidget {
           Text("${AppKeywords.goodMorning} Mohamed ${AppKeywords.handEmotion}", style: AppTextStyles.text22w600,),
           CustomTextFormField(
             controller: searchController,
+            onTab: (){
+              Navigator.pushNamed(context, Routes.discoverScreen);
+            },
+            readOnly: true,
             hint: Text(
               AppKeywords.hintForSearch,
               style: AppTextStyles.text12w400.copyWith(color: AppColors.darkTextMuted),),
             prefix: Icon(Icons.search_outlined, color: AppColors.darkTextMuted,),
             keyboardType: TextInputType.text,
-            onChanged: (value){
-              // search functionality
-            },
           ),
           Row(
             children: [
@@ -102,5 +110,11 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
   }
 }
