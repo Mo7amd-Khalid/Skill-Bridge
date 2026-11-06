@@ -6,6 +6,7 @@ import 'package:skill_bridge/features/authentication/presentation/login/login_sc
 import 'package:skill_bridge/features/authentication/presentation/register/register_screen.dart';
 import 'package:skill_bridge/features/discover/presentation/discover_screen.dart';
 import 'package:skill_bridge/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:skill_bridge/features/project_management/presentation/create_project/create_project_screen.dart';
 import 'package:skill_bridge/features/project_management/presentation/project_details/project_details_screen.dart';
 import 'package:skill_bridge/features/splash/presentation/splash_screen.dart';
 
@@ -72,6 +73,11 @@ abstract class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => DiscoverScreen(),
+        );
+      case Routes.createProjectScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => CreateProjectScreen(),
         );
       default:
         return MaterialPageRoute(

@@ -95,6 +95,18 @@ abstract class AppKeywords{
   static const String noResultFount = "No Result Fount";
   static const String inviteToProject = "Invite to project";
   static const String activeAndCompletedProjects = "ACTIVE & COMPLETED PROJECTS";
+  static const String createNewProject = "Create new project";
+  static const String title = "Title";
+  static const String description = "Description";
+  static const String writeTheTitleOfTheProject = "Write the title of the project";
+  static const String writeTheDescriptionOfTheProject = "Write the description of the project";
+  static const String projectSkills = "Project Skills";
+  static const String existingSkills = "Existing skills";
+  static const String requiredSkills = "Required skills";
+  static const String selectedContributors = "Selected Contributors";
+  static const String availableContributors = "Available Contributors";
+  static const String searchForContributor = "Search for contributor";
+  static const String createProject = "Create project";
 
 
 

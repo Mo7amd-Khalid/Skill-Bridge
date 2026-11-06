@@ -45,4 +45,19 @@ class DataValidation{
     return null;
   }
 
+  static String? titleForProjectValidation(String value){
+    if(value.isEmpty)
+    {
+      return "Title is required";
+    }
+    return null;
+  }
+
+  static String? descriptionForProjectValidation(String value){
+    if(value.isEmpty)
+    {
+      return "Description is required";
+    }
+    return null;
+  }
 }
