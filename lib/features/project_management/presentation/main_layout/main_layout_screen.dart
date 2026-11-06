@@ -37,7 +37,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
             onTap: (index){
               if(index == 2)
                 {
-                  // navigate to create project screen
+                  Navigator.pushNamed(context, Routes.createProjectScreen);
                 }
               else if(index == 1)
                 {
@@ -74,7 +74,9 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
           body: state.screens[state.currentIndex],
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButton: FloatingActionButton(
-            onPressed: (){}, child: Icon(Icons.add, color: AppColors.black,),
+            onPressed: (){
+              Navigator.pushNamed(context, Routes.createProjectScreen);
+            }, child: Icon(Icons.add, color: AppColors.black,),
           ),
         ),
       ),
