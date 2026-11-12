@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_bridge/features/conversations_and_chats/presentation/conversations_screen/conversations_screen.dart';
 import 'package:skill_bridge/features/project_management/presentation/home/home_screen.dart';
 
 class MainLayoutStates{
@@ -7,7 +8,7 @@ class MainLayoutStates{
     HomeScreen(),
     Scaffold(),
     Scaffold(),
-    Scaffold(),
+    ConversationsScreen(),
     Scaffold(),
   ];
   MainLayoutStates({this.currentIndex = 0});

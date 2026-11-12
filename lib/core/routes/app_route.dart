@@ -5,15 +5,16 @@ import 'package:skill_bridge/features/authentication/presentation/forget_passwor
 import 'package:skill_bridge/features/authentication/presentation/login/login_screen.dart';
 import 'package:skill_bridge/features/authentication/presentation/register/register_screen.dart';
 import 'package:skill_bridge/features/discover/presentation/discover_screen.dart';
+import 'package:skill_bridge/features/conversations_and_chats/data/models/chat_model.dart';
+import 'package:skill_bridge/features/conversations_and_chats/presentation/chat_screen/chat_screen.dart';
 import 'package:skill_bridge/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:skill_bridge/features/project_management/presentation/create_project/create_project_screen.dart';
 import 'package:skill_bridge/features/project_management/presentation/project_details/project_details_screen.dart';
 import 'package:skill_bridge/features/splash/presentation/splash_screen.dart';
-
 import '../../features/contributor_management/data/models/collaborator_model.dart';
 import '../../features/contributor_management/presentation/contributor_details/contributor_details_screen.dart';
+import '../../features/main_layout/presentation/main_layout_screen.dart';
 import '../../features/project_management/data/models/project_model.dart';
-import '../../features/project_management/presentation/main_layout/main_layout_screen.dart';
 
 
 abstract class AppRouter {
@@ -78,6 +79,11 @@ abstract class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => CreateProjectScreen(),
+        );
+      case Routes.chatScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => ChatScreen(chat: settings.arguments as ChatModel),
         );
       default:
         return MaterialPageRoute(

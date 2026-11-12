@@ -392,4 +392,3 @@ class _CreateProjectScreenState extends State<CreateProjectScreen> {
     ).fadeInUp();
   }
 }
-// عاوز اشيل الskill من ال list سواء  exist & required

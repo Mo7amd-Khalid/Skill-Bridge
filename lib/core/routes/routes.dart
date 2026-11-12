@@ -9,5 +9,6 @@ abstract class Routes {
   static const String contributorDetailsScreen = "contributorDetailsScreen";
   static const String discoverScreen = "discoverScreen";
   static const String createProjectScreen = "createProjectScreen";
+  static const String chatScreen = "chatScreen";
 
 }
