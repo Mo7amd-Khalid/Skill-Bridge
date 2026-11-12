@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:skill_bridge/core/base/base_cubit.dart';
-import 'package:skill_bridge/features/project_management/presentation/main_layout/cubit/contract.dart';
+
+import 'contract.dart';
 
 @injectable
 class MainLayoutCubit extends BaseCubit<MainLayoutStates, MainLayoutActions, MainLayoutNavigations>{

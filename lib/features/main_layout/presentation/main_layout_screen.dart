@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skill_bridge/core/di/di.dart';
 import 'package:skill_bridge/core/routes/routes.dart';
 import 'package:skill_bridge/core/theme/app_colors.dart';
-import 'package:skill_bridge/features/project_management/presentation/main_layout/cubit/contract.dart';
-import '../../../shared_widgets/logo_widget.dart';
+
+import '../../shared_widgets/logo_widget.dart';
+import 'cubit/contract.dart';
 import 'cubit/cubit.dart';
+
 
 class MainLayoutScreen extends StatefulWidget {
   const MainLayoutScreen({super.key});
@@ -60,7 +62,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
                   label: "Discover"
               ),
               // fake
-              BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Create"),
+              BottomNavigationBarItem(icon: Icon(Icons.add, color: AppColors.darkCanvas), label: ""),
               BottomNavigationBarItem(
                   icon: Icon(Icons.chat_bubble_outline),
                   activeIcon: Icon(Icons.chat_bubble),
@@ -73,7 +75,9 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
           ),
           body: state.screens[state.currentIndex],
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: FloatingActionButton(
+          floatingActionButton:  MediaQuery.of(context).viewInsets.bottom > 0
+              ? null
+              : FloatingActionButton(
             onPressed: (){
               Navigator.pushNamed(context, Routes.createProjectScreen);
             }, child: Icon(Icons.add, color: AppColors.black,),

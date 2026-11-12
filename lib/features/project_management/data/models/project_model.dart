@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProjectModel {
   final String id;
@@ -22,40 +23,47 @@ class ProjectModel {
     required this.status,
   });
 
-  factory ProjectModel.fromJson(Map<String, dynamic> json) {
+  factory ProjectModel.fromFirestore(
+      DocumentSnapshot<Map<String, dynamic>> doc,
+      ) {
+    final data = doc.data()!;
+
     return ProjectModel(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      description: json['description'] as String,
-      projectManagerId: json['projectManagerId'] as String,
-      memberIds: List<String>.from(json['memberIds'] ?? []),
-      requiredSkills: (json['requiredSkills'] as List<dynamic>? ?? [])
+      id: doc.id,
+      title: data['title'] ?? '',
+      description: data['description'] ?? '',
+      projectManagerId: data['projectManagerId'] ?? '',
+      memberIds: List<String>.from(data['memberIds'] ?? []),
+      requiredSkills: (data['requiredSkills'] as List<dynamic>? ?? [])
           .map(
             (skill) => RequiredSkillModel.fromJson(
           Map<String, dynamic>.from(skill),
         ),
       )
           .toList(),
-      existingSkills: List<String>.from(json['existingSkills'] ?? []),
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      status: ProjectStatus.values.byName(json['status'] as String),
+      existingSkills: List<String>.from(data['existingSkills'] ?? []),
+      createdAt: (data['createdAt'] as Timestamp).toDate(),
+      status: ProjectStatus.values.byName(data['status']),
     );
   }
 
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toFirestore() {
     return {
-      'id': id,
       'title': title,
       'description': description,
       'projectManagerId': projectManagerId,
       'memberIds': memberIds,
-      'requiredSkills': requiredSkills.map((skill) => skill.toJson()).toList(),
+      'requiredSkills': requiredSkills
+          .map((skill) => skill.toJson())
+          .toList(),
       'existingSkills': existingSkills,
-      'createdAt': createdAt.toIso8601String(),
+      'createdAt': Timestamp.fromDate(createdAt),
       'status': status.name,
     };
   }
 }
+
+
 
 class RequiredSkillModel {
   final String skillName;
@@ -68,8 +76,8 @@ class RequiredSkillModel {
 
   factory RequiredSkillModel.fromJson(Map<String, dynamic> json) {
     return RequiredSkillModel(
-      skillName: json['skillName'] as String,
-      requiredMembersCount: json['requiredMembersCount'] as int,
+      skillName: json['skillName'] ?? '',
+      requiredMembersCount: json['requiredMembersCount'] ?? 0,
     );
   }
 
@@ -80,6 +88,7 @@ class RequiredSkillModel {
     };
   }
 }
+
 
 enum ProjectStatus {
   open,

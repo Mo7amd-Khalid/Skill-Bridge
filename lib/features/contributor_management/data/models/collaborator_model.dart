@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ContributorModel {
   final String id;
@@ -26,27 +27,36 @@ class ContributorModel {
     required this.availableHours,
   });
 
-  factory ContributorModel.fromJson(Map<String, dynamic> json) {
+  factory ContributorModel.fromFirestore(
+      DocumentSnapshot<Map<String, dynamic>> doc,
+      ) {
+    final data = doc.data()!;
+
     return ContributorModel(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      title: json['title'] as String,
-      email: json['email'] as String,
-      bio: json['bio'] as String,
-      skills: List<String>.from(json['skills'] ?? []),
+      id: doc.id,
+      name: data['name'] ?? '',
+      title: data['title'] ?? '',
+      email: data['email'] ?? '',
+      bio: data['bio'] ?? '',
+      skills: List<String>.from(data['skills'] ?? []),
       experienceLevel: ExperienceLevel.values.byName(
-        json['experienceLevel'] as String,
+        data['experienceLevel'] ?? 'junior',
       ),
-      portfolioLinks: List<String>.from(json['portfolioLinks'] ?? []),
-      contributedProjectsIDs: List<String>.from(json['contributedProjectsIDs'] ?? []),
-      managedProjectsIDs: List<String>.from(json['managedProjectsIDs'] ?? []),
-      availableHours: json['availableHours'] as int,
+      portfolioLinks: List<String>.from(
+        data['portfolioLinks'] ?? [],
+      ),
+      contributedProjectsIDs: List<String>.from(
+        data['contributedProjectsIDs'] ?? [],
+      ),
+      managedProjectsIDs: List<String>.from(
+        data['managedProjectsIDs'] ?? [],
+      ),
+      availableHours: data['availableHours'] ?? 0,
     );
   }
 
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toFirestore() {
     return {
-      'id': id,
       'name': name,
       'title': title,
       'email': email,
@@ -66,6 +76,7 @@ enum ExperienceLevel {
   midLevel,
   senior,
 }
+
 
 
 final List<ContributorModel> dummyUsers = [
